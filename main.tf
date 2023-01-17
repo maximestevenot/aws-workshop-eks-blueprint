@@ -163,7 +163,7 @@ module "kubernetes_addons" {
 
   enable_karpenter                     = true
   karpenter_helm_config = {
-    awsInterruptionQueueName = module.karpenter.queue_arn
+    awsInterruptionQueueName = data.aws_arn.queue.resource
     awsDefaultInstanceProfile = "${local.name}-${local.node_group_name}"
   }
   karpenter_node_iam_instance_profile        = module.karpenter.instance_profile_name
@@ -190,4 +190,8 @@ module "karpenter" {
   create_irsa            = false # IRSA will be created by the kubernetes-addons module
 
   tags = local.tags
+}
+
+data "aws_arn" "queue" {
+  arn = module.karpenter.queue_arn
 }
