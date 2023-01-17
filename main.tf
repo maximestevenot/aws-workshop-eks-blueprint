@@ -128,7 +128,7 @@ module "vpc" {
 }
 
 module "kubernetes_addons" {
-  source = "github.com/aws-ia/terraform-aws-eks-blueprints?ref=v4.21.0/modules/kubernetes-addons"
+  source = "github.com/allamand/terraform-aws-eks-blueprints?ref=karpenter/modules/kubernetes-addons"
 
   eks_cluster_id     = module.eks_blueprints.eks_cluster_id
 
