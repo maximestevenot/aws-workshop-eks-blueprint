@@ -13,12 +13,12 @@ locals {
   # ARGOCD ADD-ON APPLICATION
   #---------------------------------------------------------------
 
+
   addon_application = {
     path               = "chart"
-    repo_url           = "https://github.com/aws-samples/eks-blueprints-add-ons.git"
+    repo_url           = "https://github.com/allamand/eks-blueprints-add-ons.git" # <-- update to uses allamand >
     add_on_application = true
   }
-
   #---------------------------------------------------------------
   # ARGOCD WORKLOAD APPLICATION
   #---------------------------------------------------------------
