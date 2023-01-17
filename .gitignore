@@ -1,5 +1,5 @@
-
-cal .terraform directories
+.terraform.lock.hcl
+# Local .terraform directories
 **/.terraform/*
 
 # .tfstate files
