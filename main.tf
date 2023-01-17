@@ -174,6 +174,7 @@ module "kubernetes_addons" {
   enable_aws_for_fluentbit             = true
   enable_metrics_server                = true
   enable_argo_rollouts                 = true
+  enable_kubecost                      = true
 }
 
 ################################################################################
