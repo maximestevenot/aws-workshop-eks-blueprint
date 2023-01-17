@@ -50,6 +50,14 @@ module "eks_blueprints" {
       subnet_ids      = module.vpc.private_subnets
     }
   }
+  
+    platform_teams = {
+    admin = {
+      users = [
+        data.aws_caller_identity.current.arn
+      ]
+    }
+  }
 
   tags = local.tags
 }
@@ -88,6 +96,7 @@ module "vpc" {
     "kubernetes.io/cluster/${local.name}" = "shared"
     "kubernetes.io/role/internal-elb"     = "1"
   }
+  
 
     tags = local.tags
 }
